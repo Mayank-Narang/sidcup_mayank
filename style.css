@@ -1,0 +1,379 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'montserrat';
+    color: #fff;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+#cursor-blur {
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    background-color: rgba(172, 255, 47, 0.083);
+    position: fixed;
+    z-index: 9;
+    filter: blur(40px);
+}
+
+#cursor {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: rgba(172, 255, 47, 0.709);
+    position: fixed;
+    z-index: 99;
+}
+
+
+#nav {
+    height: 100px;
+    width: 100%;
+    gap: 40px;
+    position: fixed;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 80px;
+    z-index: 99;
+}
+
+#nav img {
+    height: 80px;
+}
+
+#nav h4 {
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+video {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    object-fit: cover;
+    z-index: -1;
+}
+
+#main {
+    background-color: rgba(0, 0, 0, 0.37);
+    position: relative;
+
+}
+
+#page1 {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 10;
+}
+
+#page1 h1 {
+    font-size: 80px;
+    font-weight: 900;
+    position: relative;
+}
+
+#page1 h1::before {
+    content: "EAT. DRINK. PLAY.";
+    color: black;
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    z-index: -1;
+    -webkit-text-stroke: 2px greenyellow;
+}
+
+#page1 h2 {
+    font-weight: 800;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+#page1 p {
+    font-size: 15px;
+    font-weight: 500px;
+    width: 40%;
+}
+
+#page2 {
+    min-height: 100vh;
+    width: 100%;
+    z-index: 10;
+}
+
+#scroller {
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    z-index: 10;
+}
+
+#scroller::-webkit-scrollbar {
+    display: none;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+#scroller-in {
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration: 40s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+
+#scroller h4 {
+    display: inline-block;
+    margin-right: 50px;
+    font-weight: 900;
+    font-size: 75px;
+    color: transparent;
+    transition: all linear 0.2s;
+    font-family: Arial;
+    -webkit-text-stroke: 2px #95C11E;
+}
+
+#scroller h4:hover {
+    color: #95C11E;
+}
+
+#about-us {
+    height: 40vh;
+    width: 100%;
+    padding: 0 50px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    justify-content: space-around;
+}
+
+#about-us img {
+    height: 22vh;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+#about-us-in {
+    width: 40%;
+    text-align: center;
+}
+
+#about-us-in h3 {
+    font-size: 40px;
+    font-weight: 900;
+    margin: 30px 0;
+}
+
+#about-us-in p {
+    line-height: 20px;
+}
+
+#cards-container {
+    height: 60vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 65px;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+}
+
+.card {
+    border-radius: 15px;
+    height: 80%;
+    width: 23%;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    transition: all ease 0.6s;
+}
+
+#card1 {
+    background-image: url(https://wallpapers.com/images/hd/3d-golf-desktop-ukyep9loml0qg1m0.jpg);
+}
+
+
+#card2 {
+
+    background-image: url(https://images.squarespace-cdn.com/content/v1/57075ac61bbee0ca98a8a64c/1461305134291-RK0G4X2KJQ8KS0XIHT4Y/gotemba-golf-course-17th-hole.jpg?format=2500w);
+}
+
+#card3 {
+    background-image: url(https://media.istockphoto.com/id/1059122334/photo/golfer-teaching-his-girlfriend-how-to-play-golf-lifestyle-concept.jpg?s=612x612&w=0&k=20&c=csA8g3NZNMXeuyz3mNu_TUZXFngcxjkEVe-FHs64_TA=);
+}
+
+.overlay {
+    border-radius: inherit;
+    height: 100%;
+    width: 100%;
+    background-color: #95C11E;
+    padding: 90px 26px;
+    opacity: 0;
+    transition: all ease 0.6s;
+}
+
+.card:hover .overlay {
+    opacity: 1;
+}
+
+.overlay h6 {
+    font-weight: 800;
+    font-size: 22px;
+    color: black;
+    padding-bottom: 30px;
+}
+
+.overlay p {
+    color: #384d00;
+    font-weight: 600;
+}
+
+#green-div {
+    height: 20vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to left bottom, #119f3a, #ace022);
+}
+
+#green-div h4 {
+    color: black;
+    font-size: 20px;
+    font-weight: 800;
+    text-align: center;
+    width: 50%;
+    line-height: 32px;
+}
+
+#green-div img {
+    height: 100%;
+    width: 10%;
+    object-fit: cover;
+}
+
+#page3 {
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+}
+
+#page3 p {
+    font-size: 25px;
+    font-weight: 700;
+    width: 70%;
+    line-height: 40px;
+    text-align: center;
+}
+
+#page3 img {
+    position: absolute;
+    height: 40px;
+
+}
+
+#colon1 {
+    top: 30%;
+    left: 12%;
+}
+
+#colon2 {
+    bottom: 35%;
+    right: 15%;
+}
+
+#page4 {
+    height: 30vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    position: relative;
+}
+
+.elem {
+    height: 70%;
+    width: 25%;
+    overflow: hidden;
+    border-radius: 20px;
+    position: relative;
+}
+
+.elem img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: all ease 0.6s;
+    scale: 1.1;
+}
+
+.elem:hover img {
+    scale: 1;
+}
+
+.elem h2 {
+    height: 100%;
+    width: 100%;
+    color: black;
+    background-color: #95C11E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 800;
+    opacity: 1;
+    position: absolute;
+    z-index: 10;
+    transition: all ease 0.6s;
+}
+
+#page4 h1 {
+    font-size: 68px;
+    font-weight: 900;
+    position: absolute;
+    top: -12%;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-text-stroke: 1px #fff;
+}
+
+.elem:hover h2 {
+    color: #fff;
+    background-color: transparent;
+}
+
+#footer {
+    height: 40vh;
+    width: 100%;
+    background: linear-gradient(to left bottom, #119f3a, #ace022);
+}
